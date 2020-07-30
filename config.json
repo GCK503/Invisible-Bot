@@ -1,0 +1,10 @@
+{
+    "prefix": "~",
+    "bot-age": 0,
+    "words_array": ["HI", "Bye"],
+    "bot_info": {
+        "Name": "Invisible Bot",
+        "Version": 1.0,
+        "Age": 1
+    }
+}
