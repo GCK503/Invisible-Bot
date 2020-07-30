@@ -22,6 +22,7 @@ const {
 
 Client.once('ready', () => {
 	Client.user.setActivity('Subscribe to GCK503', { type: 'STREAMING' }).catch(console.error);
+	console.log('turning on!');
 	console.log(`Logged in as ${Client.user.tag}!`);
 	Client.channels.cache.get('736777392869081153').send('Turning on!');
 });
@@ -65,8 +66,6 @@ Client.on('message', message => {
 		Client.commands.get('ban').execute(message, args);
 	} else if(command == 'botinfo') {
 		Client.commands.get('botinfo').execute(message, args);
-	} else if (command == 'servers') {
-		message.channel.send(`I am In ${Client.guilds.cache.size} servers!`);
 	} else {
 		message.channel.send('that is not a proper command say ~help to get help');
 	}
