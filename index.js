@@ -15,7 +15,6 @@ for (const file of commandFiles) {
 
 const {
 	prefix,
-	token,
 	words_array,
 	bot_info,
 } = require('./config.json');
