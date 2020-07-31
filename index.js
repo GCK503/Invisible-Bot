@@ -32,9 +32,7 @@ Client.on('message', message => {
 	const command = args.shift().toLowerCase();
 
 	if (command === 'help') {
-		if (!args.length) {
-			Client.commands.get('help').execute(message, args);
-		}
+		Client.commands.get('help').execute(message, args);
 	} else if (command == 'youtube') {
 		Client.commands.get('youtube').execute(message, args);
 	} else if (command == 'verify') {
