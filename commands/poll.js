@@ -14,7 +14,7 @@
 // 		if (!args[1]) {
 //             message.channel.send(Info);
 //         }
-        
+
 //         let messageArgs = args.slice(1).join('');
 
 //         message.channel.send( '📝 ' + '**' + messageArgs + '**' ).then(Discord.MessageReaction => {
