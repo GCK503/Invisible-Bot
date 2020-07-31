@@ -9,8 +9,12 @@
   "author": "GCK503",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.3.2",
     "discord.js": "^12.2.0",
     "eslint": "^7.5.0",
-    "ms": "^2.1.2"
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "ms": "^2.1.2",
+    "ytdl-core": "^3.2.0"
   }
 }
