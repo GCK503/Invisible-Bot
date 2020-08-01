@@ -1,9 +1,13 @@
 const Discord = require('discord.js');
-const Version = '1.0.2';
+const Version = require('./config.json');
 
-module.exports = {
-	name: 'myinfo',
-	description: 'this is the myinfo command!',
+module.exports.config = {
+    name: "myinfo",
+    description: "the myinfo command",
+    usage: "~myinfo",
+    accessableby: "members",
+    aliases: []
+    }
 	execute(message, args) {
 
 		const Info = new Discord.MessageEmbed()

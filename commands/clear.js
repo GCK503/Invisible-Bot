@@ -3,17 +3,33 @@ module.exports = {
 	description: 'this is the clear command!, it deletes messages in bulk',
 	execute(message, args) {
 
-		if (message.member.hasPermission('MANAGE_MESSAGES')) {
-			const toDelete = args[0];
-			message.reply('suscessfully deleted messages');
-			if(!toDelete) return message.channel.send('You must provide an amount of messages to delete (MAX 100 [for now])');
-			if(isNaN(toDelete)) return message.channel.send('You must provide an actual number of messages to delete') ;
-
-			if(toDelete > 100) return message.channel.send('You can only delete a maximum of 100 messages [for now:D]');
-			message.channel.bulkDelete(toDelete);
-		} else {
-			message.reply('Sorry but you dont have the permissions to clear messages.');
+		if(cmd === `${prefix}clear`){
+			if (message.deletable) {
+				message.delete();
+			}
+	
+			if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+				return message.reply("Missing Permissions!").then(m => m.delete(5000));
+			}
+	
+			if (isNaN(args[0]) || parseInt(args[0]) <= 0) {
+				return message.reply("This is not a number").then(m => m.delete(5000));
+			}
+	
+			let deleteAmount;
+			if (parseInt(args[0]) > 100) {
+				deleteAmount = 100;
+			} else {
+				deleteAmount = parseInt(args[0]);
+			}
+	
+			message.channel.bulkDelete(deleteAmount, true)
+			.catch(err => message.reply(`Something went wrong... ${err}`));
+		
 		}
+	
+	})
+	
 
 	},
 };

@@ -20,7 +20,7 @@ const {
 } = require('./config.json');
 
 Client.once('ready', () => {
-	Client.user.setActivity('Subscribe to GCK503', { type: 'STREAMING' }).catch(console.error);
+	Client.user.setActivity('Subscribe to GCK503', { type: 'STREAMING',  url:"https://www.youtube.com/watch?v=oHg5SJYRHA0" }).catch(console.error);
 	console.log('turning on!');
 	console.log(`Logged in as ${Client.user.tag}!`);
 	Client.channels.cache.get('736777392869081153').send('Turning on!');
